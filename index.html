@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="flex sm:justify-center sm:items-center min-h-screen">
+    <!-- step1 -->
+    <main
+      class="transition ease-in-out duration-300 bg-white sm:rounded-3xl flex flex-col w-full sm:items-center sm:w-auto sm:flex-row-reverse sm:p-4"
+      id="step1"
+    >
+      <picture class="sm:p-4"
+        ><source
+          srcset="./assets/images/illustration-sign-up-desktop.svg"
+          media="(min-width: 640px)"
+        />
+        <img
+          src="./assets/images/illustration-sign-up-mobile.svg"
+          alt="sign up"
+          class="w-full"
+        />
+      </picture>
+
+      <div class="py-6 px-4 sm:px-12 flex flex-col gap-6 justify-center">
+        <h1 class="text-4xl font-bold text-Dark_Slate_Grey">Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <div class="space-y-2">
+          <h3 class="flex flex-row gap-2">
+            <img src="./assets/images/icon-list.svg" alt="" /> Product discovery
+            and building what matters
+          </h3>
+          <h3 class="flex flex-row gap-2">
+            <img src="./assets/images/icon-list.svg" alt="" /> Measuring to
+            ensure updates are a success
+          </h3>
+          <h3 class="flex flex-row gap-2">
+            <img src="./assets/images/icon-list.svg" alt="" /> And much more!
+          </h3>
+        </div>
+        <div>
+          <div class="flex flex-row justify-between">
+            <h4 class="text-sm font-bold text-Dark_Slate_Grey">
+              Email address
+            </h4>
+            <h4
+              class="text-sm font-bold text-red-500 hidden transition ease-in-out duration-300"
+              id="validation"
+            >
+              Valid email required
+            </h4>
+          </div>
+          <input
+            class="px-4 py-2 border rounded-md w-full transition ease-in-out duration-300"
+            type="email"
+            placeholder="email@company.com"
+            onkeydown="change()"
+          />
+        </div>
+        <button
+          class="transition ease-in-out duration-300 hover:bg-Tomato border text-white bg-Dark_Slate_Grey px-5 py-3 rounded-lg"
+          onclick="btnClick()"
+        >
+          Subscribe to monthly newsletter
+        </button>
+      </div>
+    </main>
+
+    <!-- step2 -->
+
+    <main
+      id="step2"
+      class="hidden transition ease-in-out duration-300 bg-white w-full sm:rounded-3xl flex flex-col justify-center sm:w-8/12 sm:max-w-[400px] p-6 gap-6"
+    >
+      <img src="./assets/images/icon-success.svg" class="w-16" alt="" />
+      <h1 class="text-4xl text-Dark_Slate_Grey font-bold w-9/12">
+        Thanks for subscribing!
+      </h1>
+      <p>
+        A confirmation email has been sent to
+        <span class="text-Dark_Slate_Grey font-bold" id="email"></span>. Please
+        open it and click the button inside to confirm your subscription.
+      </p>
+      <button
+        class="transition ease-in-out hover:bg-Tomato border text-white bg-Dark_Slate_Grey px-5 py-3 rounded-lg"
+        onclick="btnClick2()"
+      >
+        Dismiss message
+      </button>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
